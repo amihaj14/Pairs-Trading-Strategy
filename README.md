@@ -20,6 +20,7 @@ Pairs trading is a strategy where a trader buys one security and shorts another,
 
 ## How To Run
 **Run this in powershell** <br/>
+
 git clone https://github.com/amihaj14/pairs-trading-strategy.git <br/>
 cd pairs-trading-strategy <br/>
 pip install -r requirements.txt <br/>
