@@ -2,10 +2,10 @@
 
 A pairs trading strategy using cointegration and mean-reversion methods in Python.
 
-##Overview
+## Overview
 Pairs trading is a strategy where a trader buys one security and shorts another, with a high historical correlation, to profit from the price divergence or convergence. The goal is to assume that the spread between the two highly correlated options will revert to its historical mean. Coca-Cola and pepsi are two highly cointegrated pairs, hence their prices tend to fluctuate similarily, that are expected to revert to their historical mean.
 
-##Methodology
+## Methodology
 - Engle-Granger test
   - Used to test for cointegration between the two securities, in this case stocks
 - Spread regression
@@ -16,9 +16,9 @@ Pairs trading is a strategy where a trader buys one security and shorts another,
   - The sell signal occurs once the z-score crosses from below to above the threshold
 - Backtesting
 
-##Results
+## Results
 
-##How To Run
+## How To Run
 git clone https://github.com/yourname/pairs-trading-strategy.git
 cd pairs-trading-strategy
 pip install -r requirements.txt
