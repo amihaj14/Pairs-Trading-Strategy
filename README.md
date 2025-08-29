@@ -23,9 +23,6 @@ Pairs trading is a strategy where a trader buys one security and shorts another,
       - Stability
       - Robustness across multiple securities and timeframes
 
-## Results
-<img width="242" height="134" alt="image" src="https://github.com/user-attachments/assets/69822c8e-3daf-4a9a-8b9f-401fab163cab" />
-
 ## How To Run
 **Run this in powershell** <br/>
 
