@@ -3,7 +3,7 @@
 A pairs trading strategy using cointegration and mean-reversion methods in Python.
 
 ## Overview
-Pairs trading is a strategy where a trader buys one security and shorts another, with a high historical correlation, to profit from the price divergence or convergence. The goal is to assume that the spread between the two highly correlated options will revert to its historical mean. Coca-Cola and pepsi are two highly cointegrated pairs, hence their prices tend to fluctuate similarily, that are expected to revert to their historical mean.
+Pairs trading is a strategy where a trader buys one security and shorts another, with a high historical correlation, to profit from the price divergence or convergence. The goal is to assume that the spread between the two highly correlated options will revert to its historical mean. Coca-Cola and Pepsi are two highly cointegrated pairs, hence their prices tend to fluctuate similarily, that are expected to revert to their historical mean.
 
 ## Methodology
 - **Engle-Granger test**
