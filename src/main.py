@@ -4,8 +4,10 @@ import Backtest
 import Strategy
 import pandas as pd
 
+#Gets values from Strategy.py file 
 alpha, beta, residuals = Strategy.lin_reg(DataLoader.prices["KO"], DataLoader.prices["PEP"])
 
+#Checks if the pair being analyzed is cointegrated
 if Strategy.pVal < 0.05:
     zscore = Strategy.z_score(residuals)
     signals = Strategy.generate_signals(zscore)
@@ -24,3 +26,4 @@ if Strategy.pVal < 0.05:
 
 else:
     print("No cointegration found. Strategy not applicable.")
+
