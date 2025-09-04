@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-""""""
+"""Backtesting code and calculating performance metrics to give insight on the pair"""
 def backtest(prices, signals, beta, residuals):
 
     spreadReturn = prices['KO'].pct_change() - beta * prices['PEP'].pct_change()
@@ -59,6 +59,7 @@ def drawdown_plot(drawdown):
     plt.legend()
     plt.show()
 
+#Trading signals
 def trades_plot(spread, signals):
     plt.figure(figsize=(12,6))
     plt.plot(spread, label="Spread")
@@ -67,3 +68,4 @@ def trades_plot(spread, signals):
     plt.title("Spread with trading signals")
     plt.legend()
     plt.show()
+
