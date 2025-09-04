@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt 
 import numpy as np
 import pandas as pd
+import tkinter as tk
+from tkinter import ttk
 
 """Backtesting code and calculating performance metrics to give insight on the pair"""
 def backtest(prices, signals, beta, residuals):
@@ -37,8 +39,19 @@ def backtest(prices, signals, beta, residuals):
         "Calculation" : ["Total Return", "CAGR", "Sharpe Ratio", "Sortino Ratio", "Max Drawdown", "Win Rate", "Average Trade Return"],
         "Results" : [totReturn, cagr, sharpe, sortino, maxDd, winRate, avgTrade]
     }
-    df = pd.DataFrame(results)
-    print(df)
+    root = tk.Tk()
+    root.title("Performance Metrics")
+
+    tree = ttk.Treeview(root, columns=list(df.columns), show="headings", height=len(df))
+    for col in df.columns:
+        tree.heading(col, text=col)
+        tree.column(col, width=150, anchor="center")
+
+    for _, row in df.iterrows():
+        tree.insert("", "end", values=list(row))
+
+    tree.pack(expand=True, fill="both")
+    root.mainloop()
     
     return stratReturn, cumulative, results
 
@@ -68,4 +81,5 @@ def trades_plot(spread, signals):
     plt.title("Spread with trading signals")
     plt.legend()
     plt.show()
+
 
