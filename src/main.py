@@ -4,19 +4,6 @@ import Backtest
 import Strategy
 import pandas as pd
 
-# pairs =[
-#      ("KO", "PEP"),
-#      ("MSFT", "AAPL"),
-#      ("JPM", "BAC")
-# ]
-
-# prices = DataLoader.load_prices(pairs, start="2015-01-01")
-
-# results = []
-
-# for stock1, stock2 in pairs:
-#print(f"\n----- Testing Pair: {stock1}-{stock2} -----")
-
 alpha, beta, residuals = Strategy.lin_reg(DataLoader.prices["KO"], DataLoader.prices["PEP"])
 
 if Strategy.pVal < 0.05:
@@ -35,14 +22,5 @@ if Strategy.pVal < 0.05:
     #Backtesting
     stratReturn, cumulative, metrics = Backtest.backtest(DataLoader.prices[["KO","PEP"]], signals, beta, residuals)
 
-    #Storing results
-    # metrics["Pair"] = f"{stock1}-{stock2}"
-    # results.append(metrics)
-
 else:
     print("No cointegration found. Strategy not applicable.")
-
-# resultsDF = pd.DataFrame(results)
-# print(f"\n----- Strategy Comparison -----")
-# print(resultsDF)
-
