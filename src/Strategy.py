@@ -31,7 +31,8 @@ def generate_signals(zscore):
     return signals    
 
 #The Engle-Granger two-step cointegration test
-#if the score value is less than critVal then the pair is cointegrated
-#pval < 0.05 => statistically significant cointegration, pval >0.10 => no meaningful coinegration. Lower pval the better
+#If the score value is less than critVal then the pair is cointegrated
+#Pval < 0.05 => statistically significant cointegration, pval >0.10 => no meaningful coinegration. Lower pval the better
 score, pVal, critVal= coint(DataLoader.prices['KO'], DataLoader.prices['PEP'])
+
 print(f"Cointegration p-value: {pVal:.5f}")
